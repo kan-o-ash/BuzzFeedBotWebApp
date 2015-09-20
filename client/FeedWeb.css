@@ -1,5 +1,6 @@
 /* CSS declarations go here */
 
+/* Default */
 h1 {
   size: 44px;
 }
@@ -16,12 +17,14 @@ h4 {
   size: 22px;
 }
 
-.article img {
-  width: 100%;
+img {
+  max-width: 100%;
 }
 
+/* Header */
+
 .sub_logo {
-  display: inline-block;
+  display: none;
   color: #e33;
   font-size: 60px;
   padding: 0;
@@ -34,10 +37,24 @@ h4 {
   letter-spacing: -5px;
 }
 
-.sub_logo:first-letter {
-  font-size: 85px;
+@media (min-width: 768px) {
+  .sub_logo {
+    display: inline-block;
+  }
+
+  .sub_logo:first-letter {
+    font-size: 85px;
+  }
+}
+
+
+/* Article */
+
+.article img {
+  width: 100%;
 }
 
 .gif.row {
   padding-bottom: 15px;
 }
+
