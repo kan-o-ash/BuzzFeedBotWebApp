@@ -45,6 +45,10 @@ img {
   .sub_logo:first-letter {
     font-size: 85px;
   }
+  
+  .new-article {
+    padding: 30px;
+  }
 }
 
 

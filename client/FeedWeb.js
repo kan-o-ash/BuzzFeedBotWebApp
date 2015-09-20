@@ -1,39 +1,38 @@
-// counter starts at 0
-Session.setDefault('counter', 0);
+Meteor.startup( function () {
+  // console.log(articles.find().title)
+  // console.log()
+  // Session.set("view", "article");
 
-// Template.hello.helpers({
-//   counter: function () {
-//     return Session.get('counter');
-//   }
-// });
+  Meteor.subscribe('articles', callbacks=Template.article.__helpers['startup'])
+});
 
-// Template.hello.events({
-//   'click button': function () {
-//     // increment the counter when button is clicked
-//     Session.set('counter', Session.get('counter') + 1);
-//   }
-// });
 
-Template.viewMgr.helpers({
-  home_view: function() {
-    return (Session.get("view") == "home");
-  },
-  article_view: function() {
-    return (Session.get("view") == "article");
+Template.header.events({
+  'click .new-article': function (){
+    window.location.reload();
   }
-
-
 });
 
 Template.article.helpers({
+  startup: function () {
+    var array = articles.find().fetch();
+    console.log(array);
+    var i = Math.floor( Math.random() * array.length );
+    var article = array[i];
+
+    Session.set("article_id", article['_id']);
+  },
   title: function () {
     var id = Session.get("article_id");
-    return articles.find(id).fetch()[0].title;
+    if (id) {
+      return articles.findOne(id).title;
+    }
   },
   list_items: function () {
     var id = Session.get("article_id");
-    console.log(articles.find(id).fetch()[0].content)
-    return articles.find(id).fetch()[0].content;
+    if (id) {
+      return articles.findOne(id).content;
+    }
   },
 });
 
@@ -45,10 +44,3 @@ Template.listItem.helpers({
     return this.gif_url
   }
 });
-
-Meteor.startup( function () {
-  // console.log(articles.find().title)
-  // console.log()
-  Session.set("view", "article");
-  Session.set("article_id", "gBYWhrWoM8LgETiJb");
-})

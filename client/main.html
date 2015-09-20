@@ -12,16 +12,7 @@
 </body>
 
 <template name="viewMgr">
-  {{#if article_view}}
-    {{> article}}
-  {{/if}}
-  {{#if home_view}}
-    {{> homePage}}
-  {{/if}}
-</template>
-
-<template name="homePage">
-  <h1>HOMEPAGE</h1>
+  {{> article}}
 </template>
 
 <template name="article">
@@ -38,7 +29,7 @@
 <template name="listItem">
   <div class="row caption">
     <div class="col-lg-8">
-      <h3>{{caption}}</h3>
+      <h4>{{caption}}</h4>
     </div>
   </div>
   <div class="row gif">
