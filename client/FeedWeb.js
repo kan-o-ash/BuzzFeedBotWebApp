@@ -30,7 +30,11 @@ Template.article.helpers({
   list_items: function () {
     var id = Session.get("article_id");
     if (id) {
-      return articles.findOne(id).content;
+      var content = articles.findOne(id).content;
+      for (var i=0 ; i<content.length; i++){
+        content[i]['num'] = i+1
+      }
+      return content;
     }
   },
 });
