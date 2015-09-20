@@ -1,9 +1,5 @@
 Meteor.startup( function () {
-  // console.log(articles.find().title)
-  // console.log()
-  // Session.set("view", "article");
-
-  Meteor.subscribe('articles', callbacks=Template.article.__helpers['startup'])
+  Tracker.autorun(Template.article.__helpers[' startup'])
 });
 
 
@@ -15,12 +11,12 @@ Template.header.events({
 
 Template.article.helpers({
   startup: function () {
-    var array = articles.find().fetch();
-    console.log(array);
-    var i = Math.floor( Math.random() * array.length );
-    var article = array[i];
-
-    Session.set("article_id", article['_id']);
+    if (!Session.get('article_id')){
+      var array = articles.find().fetch();
+      var i = Math.floor( Math.random() * array.length );
+      var article = array[i];
+      Session.set("article_id", article['_id']);
+    }
   },
   title: function () {
     var id = Session.get("article_id");
