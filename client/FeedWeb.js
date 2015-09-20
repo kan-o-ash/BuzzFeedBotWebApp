@@ -1,5 +1,8 @@
 Meteor.startup( function () {
-  Tracker.autorun(Template.article.__helpers[' startup'])
+
+    setTimeout( function () {
+      Tracker.autorun(Template.article.__helpers[' startup'])
+    }, 1000);
 });
 
 
