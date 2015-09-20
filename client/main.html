@@ -1,0 +1,49 @@
+<head>
+  <title>BuzzFeed Generated</title>
+</head>
+
+<body>
+  <div class="container">
+    {{> header}}
+  </div>
+  <div class="container article">
+    {{> viewMgr}}
+  </div>
+</body>
+
+<template name="viewMgr">
+  {{#if article_view}}
+    {{> article}}
+  {{/if}}
+  {{#if home_view}}
+    {{> homePage}}
+  {{/if}}
+</template>
+
+<template name="homePage">
+  <h1>HOMEPAGE</h1>
+</template>
+
+<template name="article">
+  <div class="row title">
+    <div class="col-lg-8">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  {{#each list_items}}
+    {{> listItem}}
+  {{/each}}
+</template>
+
+<template name="listItem">
+  <div class="row caption">
+    <div class="col-lg-8">
+      <h3>{{caption}}</h3>
+    </div>
+  </div>
+  <div class="row gif">
+    <div class="col-lg-8">
+      <img src="{{gif_src}}"/>
+    </div>
+  </div>
+</template>

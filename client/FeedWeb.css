@@ -1,0 +1,43 @@
+/* CSS declarations go here */
+
+h1 {
+  size: 44px;
+}
+
+h2 {
+  size: 36px;
+}
+
+h3 {
+  size: 28px;
+}
+
+h4 {
+  size: 22px;
+}
+
+.article img {
+  width: 100%;
+}
+
+.sub_logo {
+  display: inline-block;
+  color: #e33;
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 24px;
+  line-height: 20px;
+  left: -18px;
+  font-weight: bold;
+  letter-spacing: -5px;
+}
+
+.sub_logo:first-letter {
+  font-size: 85px;
+}
+
+.gif.row {
+  padding-bottom: 15px;
+}
