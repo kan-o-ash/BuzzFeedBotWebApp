@@ -1,13 +1,18 @@
 Meteor.startup(function () {
-  // code to run on server at startup
-  // art = {
-  //   'title':'3 worst roommate horror stories',
-  //   'content': [
-  //     {'body':'first story', 'gif_url':'https://media.giphy.com/media/81uw96aYQph9m/giphy.gif'},
-  //     {'body':'second story', 'gif_url':'https://media.giphy.com/media/S3H8Ke8emWCzu/giphy.gif'},
-  //     {'body':'third story', 'gif_url':'https://media.giphy.com/media/3o85xKr0TMJTp9XWtW/giphy.gif'}
-  //     ]
+  console.log()
+});
 
-  // }
-  // articles.insert(art)
+Meteor.methods({
+  scrapeContent: function () {
+    var exec = Npm.require('child_process').exec;
+    var Fiber = Npm.require('fibers');
+
+
+    new Fiber(function(){
+      exec("ls app/server", function (error, stdout, stderr) {
+        console.log(error);
+        console.log(stdout);
+        });
+    }).run();
+  }
 });
