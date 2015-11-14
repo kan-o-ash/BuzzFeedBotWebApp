@@ -1,11 +1,3 @@
-Meteor.startup( function () {
-
-    setTimeout( function () {
-      Tracker.autorun(Template.article.__helpers[' startup'])
-    }, 1000);
-});
-
-
 Template.header.events({
   'click .new-article': function (){
     window.location.reload();
