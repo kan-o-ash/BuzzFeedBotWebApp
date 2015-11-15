@@ -1,6 +1,9 @@
 <head>
   <title>BuzzFeed Generated</title>
   <link rel="icon" sizes="16x16 32x32" href="/favicon.ico?v=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
 <body>
@@ -8,12 +11,15 @@
     {{> header}}
   </div>
   <div class="container article">
-    {{> viewMgr}}
+    {{> content}}
   </div>
+  <img id="loadingIcon" src="loading.gif"/>
 </body>
 
-<template name="viewMgr">
-  {{> article}}
+<template name="content">
+  {{#if articleLoaded}}
+    {{> article}}
+  {{/if}}
 </template>
 
 <template name="article">

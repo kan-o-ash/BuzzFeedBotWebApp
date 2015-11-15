@@ -35,6 +35,18 @@ img {
   left: -18px;
   font-weight: bold;
   letter-spacing: -5px;
+  cursor: default;
+}
+
+#loadingIcon {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+}
+
+.article {
+  background-color: #fff;
 }
 
 @media (min-width: 768px) {
