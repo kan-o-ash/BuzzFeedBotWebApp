@@ -1,6 +1,3 @@
-Meteor.startup( function () {
-});
-
 Template.header.events({
   'click .new-article': function (){
     window.location.reload();
