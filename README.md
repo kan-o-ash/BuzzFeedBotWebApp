@@ -1,3 +1,3 @@
 # FeedWeb
 
-## See it live: http://buzzfeedbot.xyz/
+See it live: http://buzzfeedbot.xyz/
