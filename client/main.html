@@ -7,22 +7,17 @@
 </head>
 
 <body>
-  <div class="container">
-    {{> header}}
-  </div>
-  <div class="container article">
-    {{> content}}
-  </div>
-  <img id="loadingIcon" src="loading.gif"/>
 </body>
 
-<template name="content">
-  {{#if articleLoaded}}
-    {{> article}}
-  {{/if}}
+<template name="article">
+  {{> header}}
+  <div class="container article">
+      {{> articleContent}}
+  </div>
+  <img id="loadingIcon" src="/loading.gif"/>
 </template>
 
-<template name="article">
+<template name="articleContent">
   <div class="row title">
     <div class="col-lg-8">
       <h1>{{title}}</h1>
@@ -43,5 +38,12 @@
     <div class="col-lg-8">
       <img src="{{gif_src}}"/>
     </div>
+  </div>
+</template>
+
+<template name="noArticles">
+  {{> header}}
+  <div class="container article">
+    <h2>Sorry, no articles yet :(</h2>
   </div>
 </template>
