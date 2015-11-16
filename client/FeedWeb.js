@@ -12,14 +12,6 @@ displayArticle = function () {
   }
 }
 
-// Template.content.rendered = displayArticle;
-
-// Template.content.helpers({
-//   articleLoaded: function () {
-//     return Session.get("article_id") != null
-//   }
-// });
-
 Template.articleContent.helpers({
   list_items: function () {
     var content = this.content;
