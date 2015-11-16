@@ -7,22 +7,19 @@
 </head>
 
 <body>
-  <div class="container">
-    {{> header}}
-  </div>
-  <div class="container article">
-    {{> content}}
-  </div>
-  <img id="loadingIcon" src="loading.gif"/>
 </body>
 
-<template name="content">
-  {{#if articleLoaded}}
-    {{> article}}
-  {{/if}}
+<template name="article">
+  {{> header}}
+  <div class="container article">
+    {{#if articleLoaded}}
+      {{> articleContent}}
+    {{/if}}
+  </div>
+  <img id="loadingIcon" src="/loading.gif"/>
 </template>
 
-<template name="article">
+<template name="articleContent">
   <div class="row title">
     <div class="col-lg-8">
       <h1>{{title}}</h1>

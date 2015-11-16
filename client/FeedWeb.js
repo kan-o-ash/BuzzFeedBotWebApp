@@ -24,13 +24,9 @@ Template.content.helpers({
 });
 
 Template.article.helpers({
-  title: function () {
-    var id = Session.get("article_id");
-    return articles.findOne(id).title;
-  },
   list_items: function () {
-    var id = Session.get("article_id");
-    var content = articles.findOne(id).content;
+    console.log(this)
+    var content = this.content;
     for (var i=0 ; i<content.length; i++){
       content[i]['num'] = i+1
     }
