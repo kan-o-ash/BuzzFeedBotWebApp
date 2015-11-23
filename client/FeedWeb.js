@@ -4,13 +4,15 @@ Template.header.events({
   }
 });
 
-Template.articleContent.helpers({
+Template.article.helpers({
   list_items: function () {
     var content = this.content;
-    for (var i=0 ; i<content.length; i++){
-      content[i]['num'] = i+1
+    if (content) {
+      for (var i=0 ; i<content.length; i++){
+        content[i]['num'] = i+1
+      }
+      return content;
     }
-    return content;
   },
  });
 
