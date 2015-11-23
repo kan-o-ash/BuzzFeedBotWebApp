@@ -4,14 +4,6 @@ Template.header.events({
   }
 });
 
-displayArticle = function () {
-  var array = articles.find().fetch();
-  if (!array.length){
-    setTimeout(displayArticle,100);
-  } else {
-  }
-}
-
 Template.articleContent.helpers({
   list_items: function () {
     var content = this.content;
