@@ -1,6 +1,4 @@
-/* CSS declarations go here */
-
-/* Default */
+/* <Default> */
 h1 {
   size: 44px;
 }
@@ -21,17 +19,14 @@ img {
   max-width: 100%;
 }
 
-/* Header */
+/* </Default> */
+/* <Header> */
 
 #loadingIcon {
   position: absolute;
   z-index: -1;
   top: 50%;
   left: 50%;
-}
-
-.article {
-  background-color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -48,8 +43,12 @@ img {
   }
 }
 
+/* </Header> */
+/* <Article> */
 
-/* Article */
+.article {
+  background-color: #fff;
+}
 
 .article img {
   width: 100%;
@@ -59,3 +58,4 @@ img {
   padding-bottom: 15px;
 }
 
+/* </Article> */

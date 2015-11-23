@@ -7,25 +7,24 @@
 </head>
 
 <body>
+  {{> header}}
 </body>
 
 <template name="article">
-  {{> header}}
   <div class="container article">
-      {{> articleContent}}
+    <div class="row title">
+      <div class="col-lg-8">
+        <h1>{{title}}</h1>
+      </div>
+    </div>
+    {{#each list_items}}
+      {{> listItem}}
+    {{/each}}
   </div>
   <img id="loadingIcon" src="/loading.gif"/>
 </template>
 
 <template name="articleContent">
-  <div class="row title">
-    <div class="col-lg-8">
-      <h1>{{title}}</h1>
-    </div>
-  </div>
-  {{#each list_items}}
-    {{> listItem}}
-  {{/each}}
 </template>
 
 <template name="listItem">
