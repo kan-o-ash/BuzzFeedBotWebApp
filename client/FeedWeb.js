@@ -1,6 +1,6 @@
 Template.header.events({
   'click .new-article': function (){
-    window.location.reload();
+    Router.go('/');
   }
 });
 
@@ -9,7 +9,8 @@ Template.article.helpers({
     var content = this.content;
     if (content) {
       for (var i=0 ; i<content.length; i++){
-        content[i]['num'] = i+1
+        // add a number before the caption
+        content[i]['num'] = i+1;
       }
       return content;
     }
