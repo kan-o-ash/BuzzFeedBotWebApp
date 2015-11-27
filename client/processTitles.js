@@ -18,7 +18,6 @@ buzzBot.updateTitle = function (article_id, text) {
     Meteor.call('UpdateTitle', article_id, text, titleUpdated);
 }
 
-
 Template.processTitles.events({
     'keyup input': function (evt) {
         if (evt.keyCode == 13) {
