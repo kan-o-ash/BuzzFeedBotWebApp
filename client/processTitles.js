@@ -10,12 +10,19 @@ Template.processTitles.helpers({
 var buzzBot = {};
 
 buzzBot.updateTitle = function (article_id, text) {
-    // articles.update(this._id, {$set: {'title': text}});
-    function titleUpdated (err, result) {
+    function cbk (err, result) {
         // can end saving graphic
         return;
     }
-    Meteor.call('UpdateTitle', article_id, text, titleUpdated);
+    Meteor.call('UpdateTitle', article_id, text, cbk);
+}
+
+buzzBot.removeArticle = function (article_id, text) {
+    function cbk (err, result) {
+        // can end deleting graphic
+        return;
+    }    
+    Meteor.call('removeArticle', article_id, cbk);
 }
 
 Template.processTitles.events({
@@ -25,8 +32,11 @@ Template.processTitles.events({
             buzzBot.updateTitle(this._id, text);
         }
     },
-    'click .titleSave': function (evt) {
+    'click .title-save': function (evt) {
         var text = $(evt.target).parents('.input-group').children('input').val();
         buzzBot.updateTitle(this._id, text);
+    },
+    'click .delete-article': function (evt) {
+        buzzBot.removeArticle(this._id);
     }
 });
