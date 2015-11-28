@@ -1,6 +1,9 @@
 Template.header.events({
-  'click .new-article': function (){
-    window.location.reload();
+  'click .new-article': function () {
+    window.location.pathname = "/";
+  },
+  'click #logo': function () {
+    window.location.pathname = "/";
   }
 });
 
@@ -9,7 +12,8 @@ Template.article.helpers({
     var content = this.content;
     if (content) {
       for (var i=0 ; i<content.length; i++){
-        content[i]['num'] = i+1
+        // add a number before the caption
+        content[i]['num'] = i+1;
       }
       return content;
     }
@@ -18,9 +22,9 @@ Template.article.helpers({
 
 Template.listItem.helpers({
   caption: function() {
-    return this.text
+    return this.text;
   },
   gif_src: function() {
-    return this.gif_url
+    return this.gif_url;
   }
 });

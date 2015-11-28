@@ -1,8 +1,19 @@
 <template name="processTitles">
+  <div class="container" id="titlesPage">
   {{#each articles}}
     <div class="form-group">
-      <label>Title of article with {{num_items}} items.</label>
-      <input class="form-control" value="{{title}}">
+      <label class="control-label">Title of article with {{num_items}} items.</label>
+      <div class="input-group">
+        <input class="form-control" value="{{title}}">
+        <div class="input-group-addon">
+          <button class="btn btn-primary title-save">Save</button>
+          <a href="/article/{{url}}" target="blank" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+          </a>
+          <button class="btn btn-danger delete-article">Delete</button>
+        </div>
+      </div>
     </div>
   {{/each}}
+  </div>
 </template>
